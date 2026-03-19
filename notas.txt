@@ -1,0 +1,50 @@
+
+sistema_empleados
+
+Creacion de bases de datos:
+
+    use sistem;
+    create table empleados
+    (id_empleado int AUTO_INCREMENT PRIMARY KEY,
+    nombre_empleado varchar(50),
+    correo_empleado varchar(50),
+    imagen_empleado varchar(200)
+    );
+    insert INTO empleados VALUES(null, 'Pepe Puertas', 'pepe@net.net', 'foto.jpg');
+
+En VSC:
+    C:\Users\Administrador\Documents\python 2996893\sistema_empleados>pip install flask
+
+instalar dependencia por si acaso
+    pip install flask-mysql
+    pip install jinja2 
+
+
+    Instalar el conector:
+        pip install mysql-connector-python
+
+Crear el entorno llamado crud:
+    python -m venv crud
+
+
+Activar el entorno virtual:
+    C:\Users\Administrador\Documents\python 2996893\sistema_empleados\crud\Scripts>.\activate
+
+    Y debe salir
+    (crud) C:\Users\Administrador\Documents\python 2996893\sistema_empleados\crud\Scripts>
+
+    Si sale error usar comando policy
+
+
+Si sale este error:
+
+    (crud) C:\Users\Administrador\Documents\python 2996893\sistema_empleados>python app.py
+    Traceback (most recent call last):
+    File "C:\Users\Administrador\Documents\python 2996893\sistema_empleados\app.py", line 1, in <module>
+    from flask import Flask, render_template
+    ModuleNotFoundError: No module named 'flask'
+
+    La solucion es volver a ejecutar:
+        pip install Flask
+
+
