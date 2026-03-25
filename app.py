@@ -4,8 +4,28 @@ from flask import Flask, render_template, request
 
 app = Flask (__name__)
 
-@app.route('/prueba')
+@app.route('/consulta')
 def index():
+    try:
+        #conexion
+        conexion = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root',
+            passwd = '',
+            database = 'sistem'
+        )
+        if conexion.is_connected():
+            cursor1 = conexion.cursor()
+            cursor1.Execute(f"""SELECT * FROM empleados;""")
+            resultado = cursor1.fetchall() #continuara
+            
+            print("Datos insertados con exito")
+    except Error as e:
+        print('Error durante la conexion o ejecucion de la consola: ', e)
+    finally:
+        if conexion.is_connectes():
+            cursor1.close()
+            conexion.close()
     return render_template('empleados/index.html')
 
 @app.route('/create')
