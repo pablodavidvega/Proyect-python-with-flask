@@ -19,10 +19,11 @@
                 <td>{{empleado[3]}}</td>
                 <td>  
                     <a href="/editar/{{empleado[0]}}" class="btn btn-warning">Editar</a>
-                    <a class="btn btn-danger" onclick="return confirm('Seguro de Eliminar?')" href="/eliminar/{{empleado[0]}}">Eliminar</a>
+                    <a class="btn btn-danger" onclick="return confirm('Seguro de Eliminar?')" 
+                    href="/eliminar/{{empleado[0]}}">Eliminar</a>
                 </td>
             </tr>
-            {% endfor%}
+            {% endfor %}
         </tbody>
     </table>
 {% include 'footer.html' %}
